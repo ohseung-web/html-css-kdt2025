@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소비자 가격</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 700px;
+      }
+      table td,
+      table th {
+        border: 1px solid #555;
+        text-align: center;
+        padding: 5px;
+      }
+      table th {
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      table thead,
+      table tbody {
+        border: 2px solid #333;
+      }
+      table caption {
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+         <colgroup> / <col> 사용 이유
+         열 단위 스타일을 쉽게 적용하고 싶을 때
+         예: 표의 첫 번째 열은 연한 녹색, 마지막 열은 회색 등
+         CSS에서 td:first-child 같은 선택자를 아직 배우지 않았거나 사용하기 어려울 때 유용합니다.
+         HTML 안에서 바로 스타일을 정의하고 싶을 때
+         CSS 파일 없이, <col>의 style 속성을 이용해서 직접 변경 가능
+          큰 표에서 반복되는 열 스타일을 일괄 적용할 때
+          수십~수백 행의 표에서도 각 열마다 일일이 td에 스타일을 넣지 않아도 됨
+    -->
+    <table>
+      <caption>
+        (본사 정식 소비자 가격)
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="2">제품명</th>
+          <th>★★★★★★★<br />바텍스</th>
+          <th>★★★★★<br />래티튜드</th>
+          <th>★★★★<br />아티젠IB</th>
+        </tr>
+      </thead>
+      <colgroup>
+        <col span="2" style="background-color: #e4ecd0" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td rowspan="2">국내차량</td>
+          <td>썬루프</td>
+          <td>150,000</td>
+          <td>90,000</td>
+          <td>170,000</td>
+        </tr>
+        <tr>
+          <td>파노라마 썬루프</td>
+          <td>330,000</td>
+          <td>200,000</td>
+          <td>170,000</td>
+        </tr>
+        <tr>
+          <td rowspan="2">수입차량</td>
+          <td>썬루프</td>
+          <td>180,000</td>
+          <td>110,000</td>
+          <td>90,000</td>
+        </tr>
+        <tr>
+          <td>파노라마 썬루프</td>
+          <td>350,000</td>
+          <td>240,000</td>
+          <td>200,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
