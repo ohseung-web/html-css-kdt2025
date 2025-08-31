@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form태그 연습</title>
+  </head>
+  <body>
+    <h3>로그인 폼</h3>
+    <hr />
+    <form action="" name="fo" method="get">
+      사용자 ID : <input type="text" size="15" value="" /><br />
+      <!-- size : input의 길이 -->
+      <!-- maxlength : input에 입력하는 문자 길이 -->
+      비밀 번호 : <input type="password" size="15" value="" maxlength="15" />
+      <input type="submit" value="완료" />
+    </form>
+    <hr />
+    <!-- 즉, 지금 코드에서 name="sform"은 자바스크립트로 이 폼을 선택하고 조작할 때 사용되는 이름이에요. -->
+    <!-- HTML5부터는 폼 요소에 id를 주고 getElementById로 접근하는 방법을 더 권장합니다. -->
+    <form
+      name="sform"
+      action="https://search.naver.com/search.naver"
+      method="get"
+    >
+      <input name="query" type="text" />
+      <input type="submit" value="검색" />
+    </form>
+    <hr>
+    <form>
+      <fieldset>
+          <legend>로그인 정보</legend>
+          <label for=“”>아이디</abel>:<input type=“text”><br>
+          <label for=“”>비밀번호</abel>:<input type=“password”>
+      </fieldset>
+      <fieldset>
+          <legend>회원 정보</legend>
+          <label for=“”>취미/특기</abel>:<input type=“text”>
+      </fieldset>
+      <textarea rows="10" cols="30"></textarea>
+  </form>
+    <hr>
+    <!-- checkbox -->
+     <!--
+           name="hobby"
+            폼 데이터 그룹화를 위해 사용됩니다.
+            같은 name을 가진 체크박스나 라디오 버튼들은 하나의 그룹으로 묶임
+            서버로 폼이 제출될 때, 같은 name을 가진 값들이 배열처럼 전달됩니다.
+            사용자가 게임하기와 영화관람을 체크하면, 서버로 전달되는 데이터는 다음과 같이 됩니다.
+            hobby=1&hobby=2
+     -->
+    <!-- 
+          value="1"
+          체크박스가 선택되었을 때 서버로 전송되는 실제 값을 의미합니다.
+          체크박스를 체크하지 않으면, 이 값은 서버로 전송되지 않습니다.
+          예를 들어, 사용자가 게임하기 체크박스만 선택하면 서버에 전송되는 값은:
+          hobby=1 
+          value="영화감상" => 서버로 hobby="영화감상"이 전달된다.
+    -->
+    <form>
+      <input type="checkbox" checked value="1" name="hobby[]" id="ho1"><label for="ho1">게임하기</label>
+      <input type="checkbox" value="2" name="hobby" id="ho2" ><label for="ho2">영화관람</label>
+      <input type="checkbox" value="3" name="hobby" id="ho3"><label for="ho3">음악감상</label>
+    </form> 
+    <hr>
+    <!-- select 드롭다운 목록만들기 -->
+     <!--  
+         반드시 목록에서 하나를 선택해야 하는 경우 적합
+         모바일에서 드롭다운 UI가 기본 제공되어 터치 친화적
+         입력 자유도가 없음 → 사용자는 목록에 없는 값을 직접 입력 불가
+     -->
+    <form>
+        <select>
+          <!-- disabled : 비활성화 -->
+           <!-- selected : 기본선택  -->
+          <option value=“” disabled>Family Site</option>
+          <option value=“건축사무소” selected>건축사무소 </option>
+          <option value=“시공사무소”>시공사무소 </option>
+          <option value=“설계사무소”>설계사무소 </option>
+        </select>
+    </form>
+    <hr>
+    <!-- datalist -->
+     <!-- 
+         사용자가 목록에서 선택하거나 직접 다른 값을 입력 가능 → 자유로운 입력
+         UI가 브라우저마다 다르게 렌더링됨 → 디자인 커스터마이징 어려움
+         모바일에서 지원이 브라우저마다 다를 수 있음
+     -->
+     <!-- 
+         <select> → 안전하고 정해진 옵션
+          <datalist> → 자유 입력 + 추천 목록
+          실무에서는 대부분 <select>를 쓰고, <datalist>는 제한적으로 사용
+     -->
+    <label for="age">당신이 좋아하는 반려동물은?</label>
+    <input type="text" list="age_options">
+    <datalist id="age_options">
+      <option value="고양이"></option>
+      <option value="강아지"></option>
+      <option value="기린"></option>
+      <option value="고라니"></option>
+      <option value="오리"></option>
+      <option value="타란튤라"></option>
+      <option value="마타마타"></option>
+      <option value="알파카"></option>
+      <option value="수리부엉이"></option>
+      <option value="칡"></option>
+    </datalist>
+
+    <hr>
+    <!-- button 태그 -->
+   <form>
+    <label for="">검색</label> : <input type="text" size="10" value="">
+                                 <input type="button" value="Q1">
+                                 <button type="button">Q2</button><br>
+    <label for="">Summit 버튼</label> : <input type="submit" value="전송1">
+                                        <button type="submit">전송2</button><br>
+    <label for="">reset 버튼</label> : <input type="reset" value="리셋1">
+</form>
+
+  </body>
+</html>
