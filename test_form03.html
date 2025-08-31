@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form태그 연습</title>
+  </head>
+  <body>
+    <form>
+      <h3>간단한 설문</h3>
+
+      <label for="fruit">좋아하는 과일 선택:</label>
+      <select id="fruit" name="fruit">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="strawberry">딸기</option>
+        <option value="grape">포도</option>
+      </select>
+      <br />
+
+      <label for="drink">좋아하는 음료 입력:</label>
+      <input list="drinks" id="drink" name="drink" />
+      <datalist id="drinks">
+        <option value="콜라"></option>
+        <option value="사이다"></option>
+        <option value="주스"></option>
+        <option value="커피"></option>
+      </datalist>
+      <br />
+
+      <!-- 취미 체크박스 -->
+      <span>취미(복수 선택 가능):</span>
+      <label><input type="checkbox" name="hobby" value="reading" /> 독서</label>
+      <label
+        ><input type="checkbox" name="hobby" value="exercise" /> 운동</label
+      >
+      <label><input type="checkbox" name="hobby" value="music" /> 음악</label>
+      <label><input type="checkbox" name="hobby" value="travel" /> 여행</label>
+      <br />
+
+      <!-- 성별 라디오 -->
+      <span>성별 선택:</span>
+      <label><input type="radio" name="gender" value="male" /> 남성</label>
+      <label><input type="radio" name="gender" value="female" /> 여성</label>
+      <br />
+
+      <label for="opinion">추가 의견:</label><br />
+      <textarea
+        id="opinion"
+        name="opinion"
+        rows="4"
+        cols="40"
+        placeholder="의견을 입력하세요"
+      ></textarea>
+    </form>
+  </body>
+</html>

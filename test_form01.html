@@ -58,7 +58,7 @@
           value="영화감상" => 서버로 hobby="영화감상"이 전달된다.
     -->
     <form>
-      <input type="checkbox" checked value="1" name="hobby[]" id="ho1"><label for="ho1">게임하기</label>
+      <input type="checkbox" checked value="1" name="hobby" id="ho1"><label for="ho1">게임하기</label>
       <input type="checkbox" value="2" name="hobby" id="ho2" ><label for="ho2">영화관람</label>
       <input type="checkbox" value="3" name="hobby" id="ho3"><label for="ho3">음악감상</label>
     </form> 
@@ -116,6 +116,69 @@
                                         <button type="submit">전송2</button><br>
     <label for="">reset 버튼</label> : <input type="reset" value="리셋1">
 </form>
+    <h3>회원 정보를 입력해주세요.</h3>
+  <hr>
+  <form>
+    email : <input type="email" placeholder="id@host"><br>
+    홈페이지 : <input type="url" placeholder="https://"><br>
+    전화번호 : <input type="tel" placeholder="010-1234-5678">
+                 <input type="submit" value="가입"><br><br>
+  <hr>
+  <!-- 
+      단순히 type="text"와 비슷하게 동작하지만, 브라우저와 보조기기에게 “이건 검색창이다”라는 의미를 전달합니다.
+    예를 들어, 스크린 리더는 이를 "검색 입력창"으로 안내할 수 있습니다
+  -->
+    검색어 : <input type="search" placeholder="검색어">
+               <input type="button" value="검색">
+  </form>
+    <hr>
+     <!-- 
+        type="month"
+        YYYY-MM 형식으로 연도와 월을 선택합니다.
+        예: 2025-08 → 2025년 8월
+
+        type="week"
+        YYYY-Www 형식으로 연도와 주차를 선택합니다.
+        예: 2025-W35 → 2025년 35번째 주
+
+        type="date"
+        YYYY-MM-DD 형식으로 **날짜(연, 월, 일)**을 선택합니다.
+        예: 2025-08-31 → 2025년 8월 31일
+
+        type="time"
+        HH:MM 또는 HH:MM:SS 형식으로 시간을 입력합니다.
+        예: 20:48 → 오후 8시 48분
+
+        type="datetime-local"
+        YYYY-MM-DDTHH:MM 또는 YYYY-MM-DDTHH:MM:SS 형식으로
+        **날짜와 시간(초 단위까지 가능)**을 함께 선택합니다.
+        예: 2025-08-31T20:48:10.32 → 2025년 8월 31일 오후 8시 48분 10.32초
+    -->
+    <h3>시간 정보 입력 HTML5 폼 요소들</h3>
+       초기 세팅 : 2025년 8월 31일 오후 8시 48분(10초 32)<br>
+    <hr>
+    <form>
+    month : <input type="month" value="2025-08"><br> 
+    week : <input type="week" value="2025-W35"><br>
+    data : <input type="date" value="2025-08-31"><br> 
+    time : <input type="time" value="20:48"><br>
+    local: <input type="datetime-local" 
+                value="2025-08-31T20:48:10.32"><br>
+    </form>
+    <hr>
+    <!-- 스핀버튼 -->
+     <h3>스핀버튼</h3>
+     <input type="number" min="0.0" max="10.0" step= "0.5">
+    <!-- 슬라이드바 -->
+     <hr>
+     <h3>슬라이드바</h3>
+     <input type="range" min="0" max="100" 
+											list="temperatures">
+      <datalist id="temperatures">
+        <option value="10" label="Low">
+        <option value="50" label="Medium">
+        <option value="90" label="High">
+      </datalist>
 
   </body>
 </html>

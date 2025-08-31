@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form태그 연습</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h4 {
+        color: #555;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      input[type='month'],
+      input[type='week'],
+      input[type='date'],
+      input[type='time'],
+      input[type='datetime-local'],
+      input[type='number'],
+      input[type='range'],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      label {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        margin-right: 5px;
+      }
+      input[type='submit'],
+      input[type='reset'] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type='reset'] {
+        background-color: #f44336;
+        margin-left: 10px;
+      }
+      input[type='submit']:hover {
+        background-color: #45a049;
+      }
+      input[type='reset']:hover {
+        background-color: #d32f2f;
+      }
+      span,
+      label {
+        display: inline-block;
+        margin-top: 10px;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>예약 및 만족도 조사 폼</h2>
+    <form>
+      <h4>예약 날짜/시간 입력</h4>
+      month: <input type="month" value="2025-08" /><br />
+      week: <input type="week" value="2025-W35" /><br />
+      date: <input type="date" value="2025-08-31" /><br />
+      time: <input type="time" value="15:30" /><br />
+      local: <input type="datetime-local" value="2025-08-31T15:30:10" /><br />
+
+      <h4>인원 수 입력</h4>
+      <label for="people">예약 인원:</label>
+      <input
+        type="number"
+        id="people"
+        name="people"
+        min="1"
+        max="10"
+        value="2"
+      /><br />
+
+      <h4>만족도 평가</h4>
+      <label for="satisfaction">만족도:</label>
+      <input
+        type="range"
+        id="satisfaction"
+        name="satisfaction"
+        min="0"
+        max="100"
+        list="levels"
+      />
+      <datalist id="levels">
+        <option value="0" label="매우 불만족"></option>
+        <option value="50" label="보통"></option>
+        <option value="100" label="매우 만족"></option></datalist
+      ><br />
+
+      <h4>추가 옵션</h4>
+      <span>선호하는 서비스 유형:</span>
+      <input type="checkbox" id="fast" name="service" value="fast" />
+      <label for="fast">빠른 응답</label>
+      <input type="checkbox" id="kind" name="service" value="kind" />
+      <label for="kind">친절한 서비스</label>
+      <input type="checkbox" id="cheap" name="service" value="cheap" />
+      <label for="cheap">저렴한 가격</label><br />
+
+      <sapn>방문 목적:</sapn>
+      <input type="radio" id="work" name="purpose" value="work" />
+      <label for="work">업무</label>
+      <input type="radio" id="leisure" name="purpose" value="leisure" />
+      <label for="leisure">여가</label>
+      <input type="radio" id="other" name="purpose" value="other" />
+      <label for="other">기타</label><br />
+
+      <h4>의견 작성</h4>
+      <textarea
+        name="opinion"
+        rows="4"
+        cols="40"
+        placeholder="의견을 입력하세요"
+      ></textarea
+      ><br />
+
+      <input type="submit" value="제출" />
+      <input type="reset" value="리셋" />
+    </form>
+  </body>
+</html>

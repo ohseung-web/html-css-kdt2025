@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form태그 연습</title>
+  </head>
+  <body>
+    <form>
+      <h3>회원 설문</h3>
+
+      <label for="email">이메일 주소:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="id@host"
+      /><br /><br />
+
+      <label for="homepage">홈페이지:</label>
+      <input
+        type="url"
+        id="homepage"
+        name="homepage"
+        placeholder="https://"
+      /><br /><br />
+
+      <label for="drink">좋아하는 음료:</label>
+      <input
+        list="drinks"
+        id="drink"
+        name="drink"
+        placeholder="음료를 입력하세요"
+      />
+      <datalist id="drinks">
+        <option value="콜라"></option>
+        <option value="사이다"></option>
+        <option value="주스"></option>
+        <option value="커피"></option>
+      </datalist>
+
+      <br /><br />
+
+      <span>성별 선택:</span>
+      <label><input type="radio" name="gender" value="male" /> 남성</label>
+      <label><input type="radio" name="gender" value="female" /> 여성</label
+      ><br /><br />
+
+      <span>취미(복수 선택 가능):</span>
+      <label><input type="checkbox" name="hobby" value="reading" /> 독서</label>
+      <label><input type="checkbox" name="hobby" value="music" /> 음악</label>
+      <label><input type="checkbox" name="hobby" value="travel" /> 여행</label
+      ><br /><br />
+
+      <label for="opinion">추가 의견:</label><br />
+      <textarea
+        id="opinion"
+        name="opinion"
+        rows="3"
+        cols="40"
+        placeholder="자유롭게 입력하세요"
+      ></textarea
+      ><br /><br />
+
+      <button type="submit">제출</button>
+      <button type="reset">리셋</button>
+    </form>
+  </body>
+</html>
