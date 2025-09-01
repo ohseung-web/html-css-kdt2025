@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sing up</title>
+    <style>
+      /* 전체 폼 영역 */
+      form {
+        width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fafafa;
+        font-family: Arial, sans-serif;
+      }
+
+      /* h1, p 가운데 정렬 */
+      h1,
+      p {
+        text-align: center;
+      }
+
+      /* 리스트 스타일 제거 */
+      form ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* 각 항목 li */
+      form ul li {
+        margin-bottom: 15px;
+      }
+
+      /* 라벨 */
+      .userlabel {
+        display: inline-block; /* 라벨 길이 고정 */
+        width: 150px;
+        font-weight: bold;
+        color: #333;
+        vertical-align: top; /* 여러 줄 입력창 대비 */
+      }
+
+      /* 텍스트 입력, 비밀번호, 셀렉트, 텍스트에어리어 */
+      input[type='text'],
+      input[type='password'],
+      select,
+      textarea {
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      /* 텍스트에어리어는 넓게 */
+      textarea {
+        width: 300px;
+      }
+
+      /* 체크박스, 라디오버튼은 간단히 */
+      input[type='checkbox'],
+      input[type='radio'] {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+
+      /* 버튼 영역 */
+      .btn {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .btn button {
+        padding: 8px 16px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      /* 가입 버튼 */
+      .btn button[type='submit'] {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .btn button[type='submit']:hover {
+        background-color: #45a049;
+      }
+
+      /* 취소 버튼 */
+      .btn button[type='reset'] {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .btn button[type='reset']:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <p>Become a member of Andrew's Company, and enjoy a variety of benefits.</p>
+
+    <form action="" method="post">
+      <ul>
+        <li>
+          <label for="username" class="userlabel">Name</label>
+          <input type="text" id="username" name="username" />
+        </li>
+        <li>
+          <label for="userid" class="userlabel">ID</label>
+          <input type="text" id="userid" name="userid" />
+        </li>
+        <li>
+          <label for="password" class="userlabel">Password</label>
+          <input type="password" id="password" name="password" />
+        </li>
+        <li>
+          <label for="confirm" class="userlabel">Confirm Password</label>
+          <input type="password" id="confirm" name="confirm" />
+        </li>
+        <li>
+          <label for="mobile1" class="userlabel">Mobile</label>
+          <select name="mobile1" id="mobile1">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="016">016</option>
+          </select>
+          <input type="text" size="4" name="mobile2" /> -
+          <input type="text" size="4" name="mobile3" />
+        </li>
+        <li>
+          <label for="email1" class="userlabel">E-mail</label>
+          <input type="text" id="email1" name="email1" /> @
+          <input type="text" id="email2" name="email2" />
+          <select name="emaildomain" id="emaildomain">
+            <option value="">Direct input</option>
+            <option value="naver.com">naver.com</option>
+            <option value="daum.net">daum.net</option>
+            <option value="gmail.com">gmail.com</option>
+          </select>
+        </li>
+        <li>
+          <label class="userlabel">Whether to receive email</label>
+          <input type="checkbox" name="accept_email" value="yes" /> Acceptance
+        </li>
+        <li>
+          <label class="userlabel">Interest</label>
+          <input type="checkbox" name="interest" value="movie" />Movie
+          <input type="checkbox" name="interest" value="theater" />Theater
+          <input type="checkbox" name="interest" value="travel" />Travel
+          <input type="checkbox" name="interest" value="mountain" />Mountain
+          climbing
+          <input type="checkbox" name="interest" value="restaurant" />Visiting a
+          restaurant
+          <input type="checkbox" name="interest" value="volunteer" />Volunteer
+          <input type="checkbox" name="interest" value="etc" />Etc
+        </li>
+        <li>
+          <label class="userlabel">Gender</label>
+          <input type="radio" name="gender" value="male" />Male
+          <input type="radio" name="gender" value="female" />Female
+        </li>
+        <li>
+          <label for="path" class="userlabel">Path learned</label>
+          <select name="path" id="path">
+            <option value="">Choose</option>
+            <option value="internet">Internet</option>
+            <option value="acquaintance">Acquaintance introduction</option>
+            <option value="etc">Etc</option>
+          </select>
+        </li>
+        <li>
+          <label for="memo" class="userlabel">Memo</label>
+          <textarea id="memo" name="memo" cols="80" rows="5"></textarea>
+        </li>
+      </ul>
+      <div class="btn">
+        <button type="submit">Sign up</button>
+        <button type="reset">Cancel</button>
+      </div>
+    </form>
+  </body>
+</html>

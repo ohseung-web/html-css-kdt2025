@@ -118,6 +118,10 @@
 </form>
     <h3>회원 정보를 입력해주세요.</h3>
   <hr>
+    <!-- 
+        스마트폰에서 type="tel"을 쓰면 숫자 키패드(전화 다이얼 키패드)가 열립니다.
+        type="tel"을 쓰면 브라우저나 보조기술(예: 스크린리더)이 "이건 전화번호 입력 필드"
+    -->
   <form>
     email : <input type="email" placeholder="id@host"><br>
     홈페이지 : <input type="url" placeholder="https://"><br>
@@ -164,6 +168,20 @@
     time : <input type="time" value="20:48"><br>
     local: <input type="datetime-local" 
                 value="2025-08-31T20:48:10.32"><br>
+    </form>
+    <!-- value가 없는 form -->
+     <!--
+          datetime-local 은 "날짜(datetime)"와 "시간(local)"을 사용자의 로컬 시간대 기준으로 입력하도록 해주는 타입입니다.
+          즉, 사용자가 직접 캘린더 + 시각 선택기를 통해 날짜와 시간을 입력할 수 있게 해줍니다.
+          "local" 이라는 말 때문에 혼동하기 쉬운데, 여기서 **UTC(세계 표준시)와의 시차 정보(타임존)**는 포함되지 않습니다.
+          → 사용자가 선택한 그 시각 자체만 브라우저에서 서버로 전송합니다.
+     -->
+    <form>
+    month : <input type="month" ><br> 
+    week : <input type="week" ><br>
+    data : <input type="date" ><br> 
+    time : <input type="time" ><br>
+    local: <input type="datetime-local"><br>
     </form>
     <hr>
     <!-- 스핀버튼 -->
