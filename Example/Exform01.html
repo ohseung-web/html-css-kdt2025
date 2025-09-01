@@ -20,7 +20,7 @@
       form {
         background-color: #fff;
         padding: 20px;
-        width: 500px;
+        width: 700px;
         margin: 0 auto;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -47,7 +47,8 @@
         margin-bottom: 15px;
       }
 
-      label {
+      label,
+      span {
         display: inline-block;
         width: 80px;
         font-weight: bold;
@@ -141,15 +142,27 @@
             </select>
           </li>
           <li>
-            <label>성별</label>
-            <input type="radio" name="gender" checked /> 남자
-            <input type="radio" name="gender" /> 여자
+            <span>성별</span>
+            <input type="radio" name="gender" checked id="man" /><label
+              for="man"
+              >남자</label
+            >
+            <input type="radio" name="gender" id="woman" />
+            <label for="woman">여자</label>
           </li>
           <li>
-            <label>관심사</label>
-            <input type="checkbox" /> 여행 <input type="checkbox" /> 게임
-            <input type="checkbox" /> 공연 <input type="checkbox" /> 운동
-            <input type="checkbox" /> 기타
+            <span>관심사</span>
+            <input type="checkbox" name="hobby" id="ho1" /><label for="ho1"
+              >여행</label
+            >
+            <input type="checkbox" name="hobby" id="ho2" />
+            <label for="ho2">게임</label>
+            <input type="checkbox" name="hobby" id="ho3" />
+            <label for="ho3">공연</label>
+            <input type="checkbox" name="hobby" id="ho4" />
+            <label for="ho4">운동</label>
+            <input type="checkbox" name="hobby" id="ho5" />
+            <label for="ho5">기타</label>
           </li>
         </ul>
       </fieldset>
