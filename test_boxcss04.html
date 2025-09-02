@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스 사이징</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 600px;
+        /* border: 1px solid red; 
+           이 코드 때문에 *{}에 box-sizing이 안먹혀서 지움   */
+      }
+      .box div {
+        border: 1px solid blue;
+        width: 200px;
+        height: 200px;
+        /* float : left 가로로 배치 */
+        /* 가로로 배치가 안되는 이유
+           위의 부모 div인 .box의 총 가로 크기가 600px인데
+           자식 div는 border: 1px씩 주어지기때문에 총 가로 크기는 602px
+           이 되기때문에다.
+           이런 경우 box-sizing:border-box 지정한다.
+        */
+        float: left;
+        /* box-sizing: border-box; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

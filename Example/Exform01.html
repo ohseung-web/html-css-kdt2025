@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>방학특강신청</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
@@ -20,7 +26,7 @@
       form {
         background-color: #fff;
         padding: 20px;
-        width: 700px;
+        width: 550px;
         margin: 0 auto;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -47,13 +53,16 @@
         margin-bottom: 15px;
       }
 
-      label,
-      span {
+      .title {
         display: inline-block;
         width: 80px;
         font-weight: bold;
       }
-      .level input[type='text'] {
+      li.gender_item label,
+      li.hobby_item label {
+        margin-right: 10px;
+      }
+      li.level input[type='text'] {
         display: inline-block;
         width: 280px;
       }
@@ -73,6 +82,10 @@
         margin-right: 5px;
       }
 
+      /* 버튼 css */
+      .btn {
+        text-align: center;
+      }
       .btn input[type='submit'],
       .btn input[type='reset'] {
         padding: 10px 20px;
@@ -104,12 +117,12 @@
   </head>
   <body>
     <h3>여름방학 특강 신청하기</h3>
-    <form action="">
+    <form action="#" method="post">
       <fieldset>
         <legend>교육과정</legend>
         <ul>
           <li class="level">
-            <label>영어회화</label>
+            <label class="title">영어회화</label>
             <input type="text" value="오전 9:00~11:00" readonly />
             <span>(초급레벨)</span>
           </li>
@@ -120,19 +133,19 @@
         <legend>신청자 기본 정보</legend>
         <ul>
           <li>
-            <label>이름</label>
+            <label class="title">이름</label>
             <input type="text" />
           </li>
           <li>
-            <label>이메일</label>
+            <label class="title">이메일</label>
             <input type="email" />
           </li>
           <li>
-            <label>비밀번호</label>
+            <label class="title">비밀번호</label>
             <input type="password" />
           </li>
           <li>
-            <label>학과</label>
+            <label class="title">학과</label>
             <select>
               <option value="">학과를 선택하세요</option>
               <option value="컴퓨터공학과">컴퓨터공학과</option>
@@ -141,20 +154,20 @@
               <option value="전자융합과">전자융합과</option>
             </select>
           </li>
-          <li>
-            <span>성별</span>
-            <input type="radio" name="gender" checked id="man" /><label
-              for="man"
-              >남자</label
-            >
+          <li class="gender_item">
+            <!-- <div class="gender_item"> -->
+            <span class="title">성별</span>
+            <input type="radio" name="gender" checked id="man" />
+            <label for="man">남자</label>
             <input type="radio" name="gender" id="woman" />
             <label for="woman">여자</label>
+            <!-- </div> -->
           </li>
-          <li>
-            <span>관심사</span>
-            <input type="checkbox" name="hobby" id="ho1" /><label for="ho1"
-              >여행</label
-            >
+          <li class="hobby_item">
+            <!-- <div class="hobby_item"> -->
+            <span class="title">관심사</span>
+            <input type="checkbox" name="hobby" id="ho1" />
+            <label for="ho1">여행</label>
             <input type="checkbox" name="hobby" id="ho2" />
             <label for="ho2">게임</label>
             <input type="checkbox" name="hobby" id="ho3" />
@@ -163,6 +176,7 @@
             <label for="ho4">운동</label>
             <input type="checkbox" name="hobby" id="ho5" />
             <label for="ho5">기타</label>
+            <!-- </div> -->
           </li>
         </ul>
       </fieldset>

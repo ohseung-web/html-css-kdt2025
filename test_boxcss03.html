@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스 사이징</title>
+
+    <style>
+      /* .box {
+        width: 600px;
+        height: 50px;
+        padding: 20px;
+        border: 10px solid red;
+        text-align: center;
+        line-height를 박스 높이와 같게 맞추기 (단순 방법, 한 줄 텍스트일 때만 가능)
+        line-height: 50px;
+        font-size: 30px;
+        box-sizing: border-box;
+      } */
+      .example {
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+        border: 10px solid blue;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+      }
+
+      /* 기본값: content-box */
+      .content-box {
+        box-sizing: content-box; /* 안 써도 기본은 이거 */
+        background-color: dodgerblue;
+      }
+
+      /* border-box */
+      .border-box {
+        box-sizing: border-box;
+        background-color: seagreen;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box">Calculating the actual contest size</div> -->
+    <div class="example content-box">content-box</div>
+    <div class="example border-box">border-box</div>
+  </body>
+</html>

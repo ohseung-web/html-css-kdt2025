@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kulry</title>
+    <link rel="stylesheet" href="Estyle/Exkulry.css" />
+  </head>
+  <body>
+    <div class="join_form">
+      <h2>회원가입</h2>
+      <form action="">
+        <ul>
+          <li>
+            <label for="userid">아이디*</label>
+            <input
+              type="text"
+              id="userid"
+              placeholder="아이디를 입력해주세요"
+            />
+          </li>
+          <li>
+            <label for="password">비밀번호*</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+          </li>
+          <li>
+            <label for="password2">비밀번호 확인*</label>
+            <input
+              type="password"
+              id="password2"
+              placeholder="비밀번호를 한번 더 입력해주세요"
+            />
+          </li>
+          <li>
+            <label for="username">이름*</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="이름을 입력해 주세요"
+            />
+          </li>
+          <li class="email">
+            <label for="email">이메일*</label>
+            <input type="text" id="email" placeholder="예: marketkurly" /> @
+            <select>
+              <option>선택하기</option>
+              <option>naver.com</option>
+              <option>gmail.com</option>
+              <option>daum.net</option>
+            </select>
+          </li>
+          <li>
+            <label for="phone">휴대폰*</label>
+            <input type="text" id="phone" placeholder="숫자만 입력해주세요." />
+            <button type="button" class="btn-small">인증번호 받기</button>
+          </li>
+          <li class="address">
+            <label>주소*</label>
+            <button type="button" class="btn-address">주소 검색</button>
+            <p class="info">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+          </li>
+          <li class="gender">
+            <label>성별</label>
+            <input type="radio" name="gender" id="male" /><label for="male"
+              >남자</label
+            >
+            <input type="radio" name="gender" id="female" /><label for="female"
+              >여자</label
+            >
+            <input type="radio" name="gender" id="none" checked /><label
+              for="none"
+              >선택안함</label
+            >
+          </li>
+          <li class="birth">
+            <label>생년월일</label>
+            <input type="text" placeholder="YYYY" /> /
+            <input type="text" placeholder="MM" /> /
+            <input type="text" placeholder="DD" />
+          </li>
+          <li class="recomm">
+            <label>추가입력 사항</label>
+            <input type="text" placeholder="추천인 아이디 입력" />
+            <button type="button" class="btn-small">아이디 확인</button>
+          </li>
+        </ul>
+
+        <div class="agreement">
+          <h3>이용약관동의*</h3>
+          <ul>
+            <li>
+              <input type="checkbox" id="agreeAll" /><label for="agreeAll"
+                >전체 동의합니다.</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="agree1" /><label for="agree1"
+                >이용약관 동의 (필수)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="agree2" /><label for="agree2"
+                >개인정보 수집∙이용 동의 (필수)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="agree3" /><label for="agree3"
+                >개인정보 수집∙이용 동의 (선택)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="agree4" /><label for="agree4"
+                >무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)</label
+              >
+            </li>
+            <li>
+              <input type="checkbox" id="agree5" /><label for="agree5"
+                >본인은 만 14세 이상입니다. (필수)</label
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="btn-submit">
+          <button type="submit">가입하기</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
