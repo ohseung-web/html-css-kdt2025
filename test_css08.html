@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css연습</title>
+    <style>
+      .text-box {
+        width: 300px;
+        height: 50px;
+        border: 1px solid black;
+
+        text-align: right;        /* 문자 오른쪽 정렬 */
+        direction: rtl;           /* 쓰기 방향 오른쪽 → 왼쪽 */
+        text-indent: 30px;        /* 첫 줄 들여쓰기 */
+        white-space: nowrap;      /* 자동 줄 바꿈 안 함 */
+        overflow: hidden;         /* 넘친 텍스트 감춤 */
+        text-overflow: ellipsis;  /* 잘린 부분 ... 처리 */
+      }
+  </style>
+    </style>
+  </head>
+  <body>
+    <!-- 서식 태그-3 -->
+    <div class="text-box">
+      CSS 속성들을 활용해서 텍스트가 어떻게 정렬되고 잘리는지 확인하는 예제
+      문장입니다.
+    </div>
+  </body>
+</html>

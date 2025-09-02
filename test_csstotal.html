@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css연습</title>
+    <style>
+     /* 전체 카드 스타일 */
+        .profile-card {
+          background-color: #f0f8ff;
+          width: 600px;
+          margin: 50px auto;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+          font-family: 'Arial', sans-serif;
+          color: #333;
+        }
+
+        /* 이름 스타일 (ID 선택자) */
+        #name {
+          font-size: 36px;
+          color: #004d40;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+
+        /* 이미지 스타일 (클래스 선택자) */
+        .profile-img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          display: block;
+          margin: 0 auto 20px auto;
+        }
+
+        /* 자기소개 문단 (태그 선택자 + 후손 선택자) */
+        .profile-card p {
+          font-size: 16px;
+          line-height: 1.6;
+          letter-spacing: 1px;
+          word-spacing: 3px;
+        }
+
+        /* 취미와 연락처 제목 */
+        .profile-card h2 {
+          color: #00796b;
+          text-decoration: underline;
+          margin-top: 30px;
+        }
+
+        /* 목록 스타일 */
+        .hobbies li {
+          color: #004d40;
+          margin: 5px 0;
+        }
+
+        .contact li a {
+          color: #d32f2f;
+          text-decoration: none;
+        }
+
+        .contact li a:hover {
+          color: #ff5722;
+          text-decoration: underline;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+          margin-top: 30px;
+          font-size: 12px;
+          color: #666;
+          text-align: center;
+        }
+  </style>
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+        <h1 id="name">홍길동</h1>
+        <!-- <img src="profile.jpg" alt="홍길동 사진" class="profile-img"> -->
+        
+        <p>안녕하세요! 저는 웹 개발을 배우고 있습니다.</p>
+        <p>HTML과 CSS를 활용해서 멋진 웹페이지를 만드는 것이 목표입니다.</p>
+        <p>앞으로 JavaScript까지 배워서 인터랙티브한 페이지를 만들 계획입니다.</p>
+
+        <h2>취미</h2>
+        <ul class="hobbies">
+          <li>독서</li>
+          <li>운동</li>
+          <li>게임</li>
+        </ul>
+
+        <h2>연락처</h2>
+        <ul class="contact">
+          <li>Email: <a href="mailto:hong@example.com">hong@example.com</a></li>
+          <li>블로그: <a href="https://example.com" target="_blank">나의 블로그 바로가기</a></li>
+          <li>Instagram: <a href="https://instagram.com" target="_blank">@hong</a></li>
+        </ul>
+
+        <footer>
+          &copy; 2025 홍길동. All rights reserved.
+        </footer>
+    </div>
+  </body>
+</html>

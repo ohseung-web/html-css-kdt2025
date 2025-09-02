@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css연습</title>
+    <style>
+      h1 {
+        color: red;
+      }
+      .text {
+        color: blue;
+      }
+      #text {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css 우선순위 설명 -->
+    <h1>CSS 적용우선순위 - 태그</h1>
+    <h1 class="text">CSS 적용우선순위 - 클래스</h1>
+    <h1 id="text">CSS 적용우선순위 - 아이디</h1>
+    <h1>CSS 적용우선순위 - 인라인</h1>
+    <h1>CSS 적용우선순위 - !important</h1>
+    <h1 id="text" style="color: gold">CSS 적용우선순위 - 아이디</h1>
+  </body>
+</html>

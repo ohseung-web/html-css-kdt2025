@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css연습</title>
+    <style>
+      /* .parent{
+        border:1px solid red;
+        width: 600px;
+        height: 200px;
+      }
+      .child{
+        width: 300px;
+        height: 30px;
+        border:1px solid blue;
+      } */
+      .box {
+        border: 1px solid red;
+        width: 400px;
+        height: 400px;
+      }
+      .box div {
+        border: 1px solid blue;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+      }
+      /* .box > div {
+        border: 1px solid blue;
+        width: 300px;
+        height: 30px;
+        padding: 20px;
+      } */
+      .box > div div{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+      } 
+    </style>
+  </head>
+  <body>
+    <!-- 자손/자식 설명 -->
+    <!-- <div class="parent">
+        <div class="child"></div>
+    </div> -->
+    <div class="box">
+      <div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

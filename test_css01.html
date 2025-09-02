@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css연습</title>
+    <style>
+      /* p.center {
+        color: red;
+      } */
+      /* p .center{
+        color:blue;
+      } */
+      p {
+        text-align: center;
+        color: red;
+      }
+      p.center {
+        text-align: center;
+        color: blue;
+      }
+      #center {
+        text-align: center;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 태그.클래스 이름과 태그 .클래스이름의 차이 -->
+    <!-- p.center : p태그 자체가 center클래스 이름인 경우만 해당 -->
+    <!-- p center : p태그 안에 존재하는 center클래스이름을 가진 자식/자손 요소 모두 -->
+    <p class="center">이건 파란색!</p>
+    <!-- 선택됨 -->
+    <div class="center">이건 선택 안 됨</div>
+    <p><span class="center">이건 선택 안 됨</span></p>
+
+    <p class="center">이건 선택 안 됨</p>
+    <p><span class="center">이건 선택됨!</span></p>
+    <p>
+      <strong><em class="center">이것도 선택됨!</em></strong>
+    </p>
+  </body>
+</html>
