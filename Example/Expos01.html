@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포지션</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        position: absolute; /* 절대 위치 지정 */
+      }
+      .box1 {
+        top: 0;
+        left: 0;
+      } /* 왼쪽 위 */
+      .box2 {
+        top: 0;
+        right: 0;
+      } /* 오른쪽 위 */
+      .box3 {
+        bottom: 0;
+        left: 0;
+      } /* 왼쪽 아래 */
+      .box4 {
+        bottom: 0;
+        right: 0;
+      } /* 오른쪽 아래 */
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포지션</title>
+    <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: #5DADE2; /* 연한 파랑 */
+      position: relative; /* 내부 absolute 요소 기준 */
+      text-align: center;
+      line-height: 200px; /* 세로 중앙 정렬 */
+      color: white;
+      font-weight: bold;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: #F5B7B1; /* 연한 핑크 */
+      position: absolute; /* box1 기준 위치 지정 가능 */
+      bottom: -50px; /* 아래쪽 맞춤 */
+      left: 50%; /* 가로 중앙 */
+      transform: translateX(-50%); /* 정확히 중앙 정렬 */
+      text-align: center;
+      line-height: 100px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+    box1
+    <div class="box2">box2</div>
+  </div>
+  </body>
+</html>
