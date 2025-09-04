@@ -10,7 +10,30 @@
         border: 5px solid red;
         width: 600px;
         height: 300px;
+        /* 
+          최종 left = 부모너비*0.5 - 요소너비*0.5 => 300 - 50 => 250
+          최종 top  = 부모높이*0.5 - 요소높이*0.5 => 150 - 50 => 100
+          이 계산을 transform: translate(-50%,-50%) 가 자동으로 처리해주는 거예요.
+        */
       }
+      .child3 {
+        position: absolute;
+        background-color: navy;
+        width: 100px;
+        height: 100px;
+        /* 3번 */
+        /* left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); */
+        right: 50%;
+        bottom: 50%;
+        /* transform은 변형하다의 의미
+           translate는 이동하다의 의미 
+           고로 변형도구위치이동
+        */
+        transform: translate(50%, 50%);
+      }
+
       .child {
         position: absolute;
         background-color: navy;
@@ -28,15 +51,6 @@
         /* 2번 */
         top: 0;
         left: 100%;
-      }
-      .child3 {
-        position: absolute;
-        background-color: navy;
-        width: 100px;
-        height: 100px;
-        /* 3번 */
-        left: 100%;
-        top: 100%;
       }
     </style>
   </head>

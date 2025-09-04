@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hover</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul.navi {
+        list-style: none;
+        /* display: flex; 가로 배치 */
+        border: 1px solid #000;
+        width: fit-content;
+        margin: 50px;
+        overflow: hidden;
+      }
+      ul.navi li {
+        float: left;
+      }
+      ul.navi li a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+        /* 
+          transition: all 0.3s ease;
+          transition : 변화가 일어날 때(hover 같은 경우) 부드럽게 애니메이션처럼 보여주도록 설정.
+          all : 색상, 크기, 위치, 테두리 등 모든 속성 변화에 적용.
+          0.3s : 변화가 일어나는 시간을 0.3초로 설정.
+          ease : 애니메이션 속도 곡선(느리게 시작 → 빠르게 → 다시 느려짐).
+          즉, hover할 때 색깔이나 밑줄 같은 변화가 뚝 바뀌지 않고 0.3초 동안 자연스럽게 바뀌도록 만든 거예요.
+        */
+        transition: all 0.3s ease; /* 전환 효과 */
+        /* 
+            order-bottom: 3px solid transparent;
+            border-bottom : 밑줄처럼 보이게 아래쪽에 선 추가.
+            3px : 선의 두께.
+            solid : 실선.
+            transparent : 색깔이 “투명”이라 안 보임.
+
+            즉, hover 전에는 눈에 안 보이는 밑줄을 미리 깔아두는 역할이에요.
+            그 덕분에 hover 했을 때 갑자기 레이아웃이 튀지 않고, 밑줄 색깔만 자연스럽게 바뀌는 거죠.
+        */
+        border-bottom: 3px solid transparent; /* hover 시 밑줄 애니메이션 */
+      }
+      /* hover css */
+      ul.navi li a:hover {
+        color: dodgerblue;
+        border-bottom: 3px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="navi">
+      <li><a href="#">HTML/CSS</a></li>
+      <li><a href="#">jQeury</a></li>
+      <li><a href="#">WordPress</a></li>
+      <li><a href="#">Photoshop</a></li>
+      <li><a href="#">Illustrator</a></li>
+      <li><a href="#">Enrolment</a></li>
+    </ul>
+  </body>
+</html>

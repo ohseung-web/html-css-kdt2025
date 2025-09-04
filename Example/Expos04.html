@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      #box1,
+      #box2,
+      #box3 {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      #box1 {
+        background: red;
+        z-index: 3; /* 가장 위 */
+      }
+      #box2 {
+        background: blue;
+        left: 150px;
+        z-index: 2; /* 중간 */
+        color: white;
+      }
+      #box3 {
+        background: orange;
+        left: 250px;
+        z-index: 1; /* 맨 뒤 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+  </body>
+</html>

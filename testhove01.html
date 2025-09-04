@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hove</title>
+    <style>
+      a {
+        color: black;
+        text-decoration: none;
+        border: 1px solid gray;
+        /* a태그는 인라인요소이다. */
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        /* transition은 애니메이션 효과이다. */
+        /* 
+            transition = "변화, 전환, 이동, 과도기" 라는 뜻.
+            동사로는 "바뀌다, 전환되다" 정도로 해석돼요.
+        */
+        transition: 0.5s;
+      }
+      a:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.daum.net">다음</a>
+    <a href="https://www.google.com">구글</a>
+  </body>
+</html>

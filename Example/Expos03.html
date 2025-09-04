@@ -3,39 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>포지션</title>
+    <title>position</title>
     <style>
-    .box1 {
-      width: 200px;
-      height: 200px;
-      background-color: #5DADE2; /* 연한 파랑 */
-      position: relative; /* 내부 absolute 요소 기준 */
-      text-align: center;
-      line-height: 200px; /* 세로 중앙 정렬 */
-      color: white;
-      font-weight: bold;
-    }
+      body {
+        margin: 300px;
+      }
+      .parent {
+        position: relative;
+        width: 600px;
+        height: 300px;
+        border: 1px solid red;
+        margin: 0 auto;
+      }
+      .child1,
+      .child2 {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+      }
+      .child1 {
+        background: yellow;
+      }
+      .child2 {
+        background: dodgerblue;
+        color: white;
+      }
+      /* 노란색 박스 (안쪽, child1) */
+      .inside1 {
+        top: 0;
+        left: 0;
+      }
+      .inside2 {
+        top: 0;
+        right: 0;
+      }
+      .inside3 {
+        bottom: 0;
+        right: 0;
+      }
+      .inside4 {
+        bottom: 0;
+        left: 0;
+      }
 
-    .box2 {
-      width: 100px;
-      height: 100px;
-      background-color: #F5B7B1; /* 연한 핑크 */
-      position: absolute; /* box1 기준 위치 지정 가능 */
-      bottom: -50px; /* 아래쪽 맞춤 */
-      left: 50%; /* 가로 중앙 */
-      transform: translateX(-50%); /* 정확히 중앙 정렬 */
-      text-align: center;
-      line-height: 100px;
-      color: white;
-      font-weight: bold;
-    }
-  </style>
+      /* 파란색 박스 (바깥쪽, child2) */
+      .outside1 {
+        top: -100px;
+        left: 0;
+      }
+      .outside2 {
+        top: -100px;
+        right: 0;
+      }
+      .outside3 {
+        top: 0;
+        right: -100px;
+      }
+      .outside4 {
+        bottom: 0;
+        right: -100px;
+      }
+      .outside5 {
+        bottom: -100px;
+        right: 0;
+      }
+      .outside6 {
+        bottom: -100px;
+        left: 0;
+      }
+      .outside7 {
+        bottom: 0;
+        left: -100px;
+      }
+      .outside8 {
+        top: 0;
+        left: -100px;
+      }
     </style>
   </head>
   <body>
-    <div class="box1">
-    box1
-    <div class="box2">box2</div>
-  </div>
+    <div class="parent">
+      <div class="child1 inside1">1</div>
+      <div class="child1 inside2">2</div>
+      <div class="child1 inside3">3</div>
+      <div class="child1 inside4">4</div>
+
+      <div class="child2 outside1">1</div>
+      <div class="child2 outside2">2</div>
+      <div class="child2 outside3">3</div>
+      <div class="child2 outside4">4</div>
+      <div class="child2 outside5">5</div>
+      <div class="child2 outside6">6</div>
+      <div class="child2 outside7">7</div>
+      <div class="child2 outside8">8</div>
+    </div>
   </body>
 </html>
