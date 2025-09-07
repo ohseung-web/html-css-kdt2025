@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>before</title>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .gnb {
+        list-style: none;
+        width: 800px;
+        margin: 50px auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 50px 30px;
+        display: flex;
+      }
+      .gnb li {
+        flex: 1;
+        text-align: center;
+      }
+      .gnb li a {
+        font-size: 14px;
+        position: relative;
+      }
+      .gnb li a:before {
+        content: '';
+        position: absolute;
+        background-color: dodgerblue;
+        height: 2px;
+        width: 0px;
+        bottom: -10px;
+        transition: 0.5s;
+        /* 왼->오 : left :0 */
+        /* 오->왼 : right: 0 */
+        /* 중앙에서 점점커지기 위해 */
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .gnb li a:hover:before {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="menuWrap"> -->
+    <ul class="gnb">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">SERVICE</a></li>
+      <li><a href="#">PORTFOLIO</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+    <!-- </div> -->
+  </body>
+</html>

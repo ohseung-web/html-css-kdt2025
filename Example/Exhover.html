@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화hover</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      .item {
+        margin: 20px auto;
+        width: 284px;
+        height: 420px;
+        position: relative;
+      }
+      .item img {
+        border-radius: 10px;
+      }
+      .caption {
+        width: 284px;
+        height: 420px;
+        background-color: rgba(0, 0, 0, 0.686);
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        color: white;
+        padding: 20px;
+        padding-top: 50px;
+        /* display:none은 transition속성을 줄 수 없기때문에 opactiy:0으로 지정한다. */
+        opacity: 0;
+        transition: 0.5s;
+        /* 
+          text-align은 자식 요소(inline, inline-block)를 정렬할 때는 부모에 줘야 한다.
+          a에 준 text-align: center;는 의미가 없었던 것.
+        */
+        text-align: center;
+      }
+      .caption a {
+        color: white;
+        background-color: teal;
+        padding: 7px;
+        border-radius: 3px;
+      }
+      .caption a:hover {
+        background-color: white;
+        color: #000;
+      }
+      /* item에 마우스 오버되면 caption이 보여라 */
+      .item:hover .caption {
+        opacity: 1;
+      }
+      span {
+        color: aquamarine;
+        font-size: 30px;
+        font-weight: 400px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+      <img src="images/movie_poster01.jpg" alt="impossiblePoster" />
+      <div class="caption">
+        <h2>미션 임파서블</h2>
+        <p>
+          가장 위험한 작전, 그의 마지막 선택 모든 인류를 위협할 새로운 무기를
+          추적하게 된 에딘 헌트(톰크루즈)와 IMF팀은 이 무기가 인류의 미래를
+          통제할 수 있다는 사실을 알게 된다.
+        </p>
+        <p>관람평 <span>9.3</span></p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input:focus</title>
+    <style>
+      input {
+        padding: 5px;
+        /* border-radius: 3px; */
+        border: none;
+        border-bottom: 1px solid #ccc;
+        /* input 박스 클릭시 바깥쪽 찐한선 없애기 */
+        outline: none;
+      }
+      /* input 박스에 마우스 클릭 시 css 변경하는 가상 클래스 focus */
+      input:focus {
+        /* background-color: skyblue; */
+        border-left: none;
+        border-right: none;
+        border-top: none;
+      }
+      /* placeholder css 가상클래스 */
+      input::placeholder {
+        color: violet;
+        font-style: italic;
+      }
+      /* 가상클래스 : before, after */
+      /* 
+        ::before와 ::after는 기본적으로 인라인(inline) 요소처럼 글자 앞뒤에 붙습니다.
+        그래서 h1::before { content: "♣ "; }는 단순히 텍스트 맨 앞에 글자를 추가하는 것과 같아서 따로 좌표 지정이 필요 없어요.
+        → ♣이 h1의 텍스트 흐름 속에 자연스럽게 들어감.
+        
+        
+          before (♣) : 그냥 텍스트 기호 하나 추가 → 흐름에 맞게 자동 정렬 → 별도 좌표 불필요.
+          after (#1) : 빨간 배경 박스를 만들고 글자 위치와는 다르게 조금 위쪽에 띄우고 싶음 → 흐름에서 빼고 절대 좌표로 제어해야 함.
+      */
+      h1 {
+        font-weight: normal;
+        position: relative;
+      }
+      h1::before {
+        content: '♣ ';
+      }
+      h1::after {
+        position: absolute;
+        content: '#1';
+        background-color: crimson;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 3px;
+        padding: 0 5px;
+        margin-left: 10px;
+        top: 10px;
+      }
+      /* 인접선택자 : + */
+      ul + p {
+        /* color: red; */
+      }
+      /* 형제선택자 : ~ */
+      ul ~ p {
+        /* color: blue; */
+      }
+      /* 인접과 형제 : + ~ */
+      ul ~ div p + div {
+        color: green;
+      }
+      /* 가상클래스 checked : checkbox 또는 radio 버튼 변경 */
+      input[type='checkbox'],
+      label {
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      input[type='checkbox'] {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+      }
+      input[type='checkbox']:checked {
+        accent-color: rgb(95, 0, 128);
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        height: 20px;
+        font-size: 20px;
+      }
+      input[type='checkbox']:checked + label {
+        /* color: red; */
+      }
+      /* background img css */
+      .bag {
+        width: 90%;
+        background-color: aquamarine;
+        padding: 40px;
+        border: 10px dashed green;
+        /* Background-clip: content-box
+          Padding을 뺀 범위에 적용됨
+        */
+        background-clip: content-box;
+        /* Background-clip: padding-box
+          Padding을 포함한 범위에 적용됨
+          */
+        /* background-clip: padding-box; */
+        /* Background-clip: border-box
+            테두리까지 포함한 범위에 적용됨
+            */
+        /* background-clip: border-box; */
+      }
+      /* 배그라운드 이미지 넣기 */
+      .bgimg {
+        width: 800px;
+        height: 550px;
+        border: 1px solid black;
+        /* 백그라운드 이미지 url */
+        background-image: url('images/background-image.jpg');
+        /* 백그라운드 이미지 반복 안함 */
+        background-repeat: no-repeat;
+        /* 백그라운드 이미지 크기 지정
+           auto: 원래 배경이미지 크기(기본값)
+           cover: 배경 이미지가 요소 크기에 관계없이 여백없이 표시
+           contain: 배경 이미지가 요소 크기에 맞게 모두 표시
+        */
+        background-size: contain;
+      }
+      /* background-position : 배경 이미지 위치 조정  */
+      .bgposition {
+        width: 800px;
+        border: 1px solid black;
+        background-image: url('images/background-position.png');
+        background-repeat: no-repeat;
+        /* center center 정중앙 위치 */
+        /* background-position: center center; */
+        /* left 100px top 50px */
+        background-position: left 100px top 50px;
+      }
+      /* background-attachment : 배경 이미지 고정하기 */
+      body {
+        background-image: url('images/backgound-attachment.png');
+        /* repeat-x : 배경이미지를 x축으로만 복사하기 */
+        background-repeat: repeat-x;
+        background-position: center bottom;
+        background-attachment: fixed;
+      }
+      /* background : linear-gradient */
+      div {
+        display: inline-block;
+        margin: 20px;
+      }
+      /* 
+        Linear-gradient: 그라디언트 방향 조정
+        baground: linear-gradient(방향 또는 각도, 시작 색상, 종료 색상)
+        Value: to top, to left, to right, to bottom, to right bottom, 45deg, 90deg, 135deg
+        to bottom → 위에서 아래로 (세로)
+        to top → 아래에서 위로 (세로 반대)
+        to right → 왼쪽에서 오른쪽으로 (가로) 
+        to left → 오른쪽에서 왼쪽으로 (가로 반대)
+      */
+      .gradient1 {
+        width: 300px;
+        height: 300px;
+
+        /* linear gradient */
+        background: linear-gradient(to bottom, blue, pink);
+        /* color-stop이란 색 시작 지정, 색 종료 지점을 지정하는 것 */
+        background: linear-gradient(to bottom, blue 30%, pink 70%);
+      }
+      .gradient2 {
+        width: 300px;
+        height: 300px;
+
+        /* linear gradient */
+        /* background: linear-gradient(135deg, blue, pink); */
+        /* 세로로 방향 무지게 */
+        /* background: linear-gradient(
+          to bottom,
+          red 0%,
+          orange 16%,
+          yellow 32%,
+          green 48%,
+          blue 64%,
+          indigo 80%,
+          violet 100%
+        ); */
+        /* 방상형 방향 무지게 */
+        background: radial-gradient(
+          circle,
+          red 0%,
+          orange 16%,
+          yellow 32%,
+          green 48%,
+          blue 64%,
+          indigo 80%,
+          violet 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    이메일 :<input type="email" placeholder="Email 주소를 입력" />
+    <h1>풀 스택 강의</h1>
+    <!-- 인접선택자 : +  -->
+    <!-- 형제선택자 : ~  -->
+    <ul>
+      <li>목록1</li>
+      <li>목록2</li>
+      <li>목록3</li>
+    </ul>
+    <p>문단입니다.</p>
+    <p>문단입니다.</p>
+    <div>
+      <p>div안의 자식P입니다.</p>
+      <div>div안의 자식 div 입니다.</div>
+    </div>
+    <p>문단입니다.</p>
+    <!-- checkbox & radio 가상클래스 checked -->
+    <label><input type="checkbox" />초등학생</label>
+    <label><input type="checkbox" />중학생</label>
+    <label><input type="checkbox" />고등학생</label>
+    <label><input type="checkbox" />대학생</label>
+    <br />
+    <br />
+    <!-- background 이미지 -->
+    <div class="bag">
+      <h2>css backgound-color example</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
+        illo, perspiciatis aspernatur exercitationem quis sint quidem rem
+        voluptatum placeat delectus id pariatur sapiente cumque a beatae, iste
+        ad molestias autem aliquam sunt sit animi! Deserunt illo est quod sed
+        laboriosam dicta a obcaecati, porro nesciunt maxime adipisci? Quasi
+        totam voluptatum quos alias tempore nam possimus qui nulla nesciunt
+        dicta quam, mollitia itaque, nostrum eum deleniti unde voluptate
+        adipisci quod fuga aliquam sed. Eligendi, id fugit accusantium quidem
+        nostrum tempore. Temporibus veniam necessitatibus obcaecati voluptas
+        velit, commodi saepe reprehenderit impedit asperiores perspiciatis quos
+        quaerat voluptate, quae repudiandae nisi quibusdam harum hic.
+      </p>
+    </div>
+    <br />
+    <!-- 배경 이미지 -->
+    <div class="bgimg"></div>
+    <br />
+    <!-- background-position : 배경 이미지 위치 조정 -->
+    <div class="bgposition"></div>
+    <br />
+    <!-- background : linear-gradient -->
+    <div class="gradient1"></div>
+    <div class="gradient2"></div>
+  </body>
+</html>
