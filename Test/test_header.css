@@ -1,0 +1,87 @@
+@charset 'utf-8';
+/* header 영역 */
+.header-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  width: 100%;
+}
+#header {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* head-top */
+#header .head-top {
+  display: none;
+}
+#header .head-top li {
+  padding-right: 15px;
+}
+#header .head-top .link02 {
+  display: flex;
+  margin-left: auto;
+}
+#header .head-top .link01 {
+  display: flex;
+}
+#header .head-top .link01 li svg {
+  vertical-align: middle;
+}
+#header .head-top .link01 li span {
+  font-size: 0.9rem;
+  color: #636263;
+}
+#header .head-top .link02 .icon {
+  background: url(imgs/spGlobal_svg.svg) -28px -52px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 5px 0;
+}
+/* head-top 종료 */
+
+/* .head-center:로고,검색,우측메뉴 */
+.head-center {
+  display: flex;
+  /* gap:20px; */
+  align-items: center;
+  padding: 10px 15px;
+}
+.head-center .sidemenu {
+  margin-left: auto;
+}
+
+.head-center .sidemenu li span {
+  display: none;
+}
+.head-center .sidemenu li {
+  display: none;
+}
+.head-center .sidemenu li:last-child {
+  display: block;
+}
+.head-center .search {
+  /* flex-grow:부모안에서 차지하는 영역의 크기 */
+  margin: 0 20px;
+  flex-grow: 1;
+  /* background-color: yellow; */
+}
+.head-center .real {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #7147f3;
+}
+.head-center .real .inptxt {
+  border: 0 none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+}
+
+.head-center .real button {
+  position: absolute;
+  right: 0;
+  top: 4px;
+}

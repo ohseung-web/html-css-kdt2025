@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Menu</title>
+    <style>
+      body {
+        color: #222;
+        /* 
+        줄 간격(행간)을 조절합니다.
+        em 단위는 현재 글자 크기를 기준으로 계산돼요.
+        1.5em이면 글자 크기의 1.5배 높이만큼 
+        줄 간격을 확보해서 가독성이 좋아집니다.
+        예: 글자 크기가 16px이면 → 줄 간격은 24px.
+      */
+        line-height: 1.5em;
+      }
+      a {
+        color: #222;
+        text-decoration: none;
+      }
+      /* 마우스가 호버되면 서브메뉴 숨김 */
+      .dropdown-submenu {
+        display: none;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      }
+      /* 서브메유 a태그 세로로 배치 */
+      .dropdown-submenu a {
+        display: block;
+        padding: 7px;
+        text-align: center;
+      }
+      /* 버튼에 마우스가 호버되면 서브메뉴 보임 */
+      .dropdown:hover .dropdown-submenu {
+        display: block;
+      }
+      .dropdown-btn {
+        border: 1px solid black;
+        width: 200px;
+        padding: 10px;
+        font-size: 20px;
+        background-color: yellowgreen;
+        color: #fff;
+        /* button 기본 음영제거 */
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      /* a태그가 hover 되면 반전 주기 */
+      .dropdown-submenu a:hover {
+        background-color: #eee;
+      }
+      .dropdown {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- hover를 이용한 메뉴 만들기 -->
+    <!-- 반드시 부모와 자식요소를 html 작성  -->
+
+    <div class="dropdown">
+      <button class="dropdown-btn">개발·프로그래밍</button>
+      <div class="dropdown-submenu">
+        <a href="#">Spring</a>
+        <a href="#">Java</a>
+        <a href="#">JavaScript</a>
+        <a href="#">HTML&CSS</a>
+        <a href="#">Python</a>
+        <a href="#">C++</a>
+        <a href="#">Jsp</a>
+        <a href="#">React</a>
+      </div>
+    </div>
+  </body>
+</html>

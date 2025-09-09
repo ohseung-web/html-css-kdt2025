@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>세로로 출력 메뉴</title>
+    <style>
+      /* 공통 스타일 초기화 */
+      body,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 8px 12px;
+        text-align: center;
+      }
+
+      a:hover {
+        background-color: #ddd;
+        color: purple;
+      }
+
+      /* 1차 메뉴를 세로 flex */
+      .menu_wrap .dep1 {
+        display: flex;
+        flex-direction: column; /* 세로 정렬 */
+        width: 150px; /* 메뉴 넓이 */
+        background-color: #ccc;
+      }
+
+      /* 1차 메뉴 항목 */
+      .dep1 > li {
+        position: relative; /* 하위 메뉴 위치 지정용 */
+      }
+
+      /* 2차 메뉴 숨김 */
+      .dep2 {
+        display: none; /* 기본 숨김 */
+        position: absolute;
+        top: 0;
+        left: 100%; /* 1차 메뉴 오른쪽에 위치 */
+        flex-direction: column; /* 세로 정렬 */
+        background-color: #ccc;
+        min-width: 150px;
+      }
+
+      /* li에 hover하면 하위 메뉴 보이기 */
+      .dep1 > li:hover .dep2 {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu_wrap">
+      <ul class="dep1">
+        <li>
+          <a href="#">웹개발</a>
+          <ul class="dep2">
+            <li><a href="#">HTML/CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">React</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">백엔드</a>
+          <ul class="dep2">
+            <li><a href="#">C#</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Scratch</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">게임개발</a>
+          <ul class="dep2">
+            <li><a href="#">Java</a></li>
+            <li><a href="#">Spring</a></li>
+            <li><a href="#">Python</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Menu li이용</title>
+    <!-- <link rel="stylesheet" href="test_hoveMenu03.css" /> -->
+    <style>
+      /* ================================
+          기본 스타일 초기화
+          ================================ */
+      body,
+      ul,
+      li {
+        margin: 0; /* 바깥 여백 제거 */
+        padding: 0; /* 안쪽 여백 제거 */
+        list-style: none; /* 목록 기본 불릿 제거 */
+        color: black; /* 글자 색 기본값 */
+      }
+
+      a {
+        color: inherit; /* 부모 요소의 글자색을 그대로 가져옴 */
+        text-decoration: none; /* 링크 밑줄 제거 */
+      }
+
+      /* ================================
+          1차 메뉴 (dep1) 가로 배치
+          ================================ */
+      .menu_wrap .dep1 {
+        display: flex; /* li들을 가로로 나란히 배치 */
+      }
+
+      .menu_wrap .dep1 > li {
+        flex: 0 0 100px; /* li의 고정 너비 100px */
+        text-align: center; /* 메뉴 글자를 가운데 정렬 */
+        /* background-color: #ddd; 
+          배경색은 li가 아니라 a에만 줘야 hover 시 문제 없음 */
+      }
+
+      /* 메뉴 클릭 영역 확장 (글자만이 아니라 박스 전체가 클릭 가능하도록) */
+      .menu_wrap .dep1 > li > a {
+        display: block; 
+        /* a를 블록 요소로 변경 (li의 가로폭 전체 차지) */
+        padding: 10px 0; /* 위아래 여백 */
+        background-color: #ddd; /* 기본 배경색 (회색) */
+      }
+
+      /* 마우스를 올렸을 때 1차 메뉴 스타일 변경 */
+      .menu_wrap .dep1 > li:hover > a {
+        background-color: purple; /* hover 시 보라색으로 변경 */
+        color: white; /* 글자색 흰색 */
+      }
+
+      /* ================================
+          2차 메뉴 (dep2) 스타일
+          ================================ */
+
+      /* 기본적으로는 보이지 않음 */
+      .menu_wrap .dep2 {
+        display: none; /* 숨김 */
+        background-color: pink; /* 보일 때 배경색 (연분홍) */
+      }
+
+      /* li에 hover되었을 때 2차 메뉴 보이기 */
+      .menu_wrap .dep1 > li:hover > .dep2 {
+        display: block; /* 보이도록 변경 */
+      }
+
+      /* 2차 메뉴 안의 a 스타일 */
+      .menu_wrap .dep2 a {
+        display: block; /* 세로로 메뉴 나열 (줄바꿈) */
+        padding: 10px 0; /* 위아래 여백 */
+      }
+
+      /* 2차 메뉴 hover 효과 */
+      .menu_wrap .dep2 a:hover {
+        text-decoration: underline; /* 밑줄 표시 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu_wrap">
+      <ul class="dep1">
+        <li>
+          <a href="#">menu1</a>
+          <ul class="dep2">
+            <li><a href="#">submenu-1</a></li>
+            <li><a href="#">submenu-2</a></li>
+            <li><a href="#">submenu-3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu2</a>
+          <ul class="dep2">
+            <li><a href="#">submenu-1</a></li>
+            <li><a href="#">submenu-2</a></li>
+            <li><a href="#">submenu-3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu3</a>
+          <ul class="dep2">
+            <li><a href="#">submenu-1</a></li>
+            <li><a href="#">submenu-2</a></li>
+            <li><a href="#">submenu-3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">menu4</a>
+          <ul class="dep2">
+            <li><a href="#">submenu-1</a></li>
+            <li><a href="#">submenu-2</a></li>
+            <li><a href="#">submenu-3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
